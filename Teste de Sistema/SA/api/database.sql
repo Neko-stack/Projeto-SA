@@ -3,20 +3,19 @@ USE teste;
 
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    senha VARCHAR(255) NOT NULL,
-    telefone DECIMAL (20) NOT NULL
+    nome VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    senha VARCHAR(255),
+    telefone VARCHAR(20)
 );
-
 
 CREATE TABLE motos (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    marca VARCHAR(50) NOT NULL,
-    modelo VARCHAR(100) NOT NULL,
-    ano INT NOT NULL,
-    cor VARCHAR(30),
-    preco DECIMAL(10, 2) NOT NULL,
-    descricao TEXT,
-    quilometragem INT DEFAULT 0
+    modelo VARCHAR(100),
+    marca VARCHAR(100),
+    ano INT,
+    preco DECIMAL(10, 2),
+    imagem_url TEXT,
+    vendedor_id INT,
+    FOREIGN KEY (vendedor_id) REFERENCES usuarios(id)
 );
