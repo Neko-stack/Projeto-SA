@@ -47,7 +47,7 @@ async function rodarTestes() {
 
   
     const perfil = await fetch(`${API_URL}/perfil/${usuarioId}`);
-    console.log("✅ Dados do Perfil:", await perfil.json());
+    console.log(" Dados do Perfil:", await perfil.json());
 
   } catch (error) {
     console.error(error.message);
